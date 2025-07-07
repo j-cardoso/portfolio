@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juliano Cardoso - Portfólio de Desenvolvedor Front-end</title>
+    <!-- Link para a fonte Roboto do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Link para Font Awesome para ícones sociais -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Variáveis CSS para cores e tamanhos */
+        :root {
+            --primary-color: #007bff; /* Azul vibrante para destaque */
+            --section-bg-color: linear-gradient(180deg, #000000 0%, #1a232f 50%, #1e2a3b 100%); /* Cor de fundo para seções, mais escura e sutil */
+            --light-text-color: #ffffff; /* Branco puro para o texto principal */
+            --subtle-text-color: #a0a8b4; /* Cinza sutil para texto secundário */
+            --border-color-subtle: rgba(0, 123, 255, 0.2); /* Borda sutil para elementos */
+            --hover-bg-color: rgba(0, 123, 255, 0.1); /* Fundo sutil ao passar o mouse */
+            --card-bg-color: rgba(255, 255, 255, 0.05); /* Fundo para cards de projeto */
+        }
+
+        /* Estilos globais do corpo */
+        body {
+            font-family: 'Roboto', sans-serif; /* Fonte principal */
+            line-height: 1.6; /* Espaçamento entre linhas */
+            margin: 0; /* Remove margem padrão do body */
+            padding: 0; /* Remove padding padrão do body */
+            /* Gradiente de preto para azul escuro */
+            background: linear-gradient(180deg, #000000 0%, #1a232f 50%, #1e2a3b 100%); /* Ajustado para um gradiente de preto para um azul muito escuro */
+            background-attachment: scroll; /* O gradiente rola junto com o conteúdo */
+            color: var(--light-text-color); /* Cor do texto padrão */
+            overflow-x: hidden; /* Evita rolagem horizontal */
+            min-height: 100vh; /* Garante que o gradiente cubra toda a altura da tela */
+        }
+
+        /* Contêiner principal para centralizar o conteúdo */
+        .container {
+            max-width: 1200px; /* Largura máxima do conteúdo */
+            margin: auto; /* Centraliza o contêiner */
+            padding: 20px; /* Espaçamento interno */
+        }
+
+        /* Estilos do cabeçalho (Header) */
+        header {
+            background-color: var(--section-bg-color); /* Fundo sólido para o cabeçalho */
+            color: var(--light-text-color); /* Texto claro */
+            padding: 50px 0 80px; /* Espaçamento interno superior e inferior */
+            position: relative; /* Para posicionamento absoluto dos elementos internos */
+            text-align: left; /* Alinhamento à esquerda para o conteúdo principal */
+        }
+
+        /* Navegação superior direita */
+        .navbar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .navbar a {
+            color: var(--subtle-text-color);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: var(--primary-color);
+        }
+
+        .navbar .resume-button {
+            background: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar .resume-button:hover {
+            background-color: var(--hover-bg-color);
+            color: var(--primary-color);
+        }
+
+        /* Título principal e subtítulo no cabeçalho */
+        header .hero-content {
+            max-width: 1200px; /* Limita a largura do texto principal */
+            margin: auto; /* Alinha à esquerda */
+            text-align: left;
+            padding: 20px;
+        }
+
+        header .hero-content p:first-child {
+            color: var(--primary-color);
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        header .hero-content h1 {
+            margin: 0;
+            font-size: 4.5em; /* Tamanho da fonte do nome, maior para destaque */
+            color: var(--light-text-color);
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        header .hero-content h1 span {
+            color: var(--primary-color); /* Cor de destaque para o sobrenome */
+        }
+
+        header .hero-content p:nth-child(3) {
+            font-size: 2em; /* Tamanho da fonte da descrição */
+            margin-top: 15px;
+            font-weight: 400;
+            color: var(--subtle-text-color);
+            max-width: 600px; /* Limita a largura da frase */
+        }
+
+        /* Botão principal no cabeçalho */
+        .main-button {
+            display: inline-block;
+            background: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .main-button:hover {
+            background-color: var(--hover-bg-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Estilos para as seções */
+        section {
+            padding: 100px 0; /* Espaçamento interno superior e inferior aumentado */
+            background-color: var(--section-bg-color); /* Fundo sólido para as seções */
+            position: relative;
+        }
+
+        section h2 {
+            text-align: left; /* Alinha títulos das seções à esquerda */
+            margin-bottom: 60px;
+            font-size: 2.8em;
+            color: var(--light-text-color);
+            position: relative;
+            padding-bottom: 20px;
+            margin-left: 20px; /* Ajusta o alinhamento do título */
+        }
+
+        /* Sublinhado decorativo para os títulos das seções */
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 0; /* Alinha o sublinhado à esquerda */
+            bottom: 0;
+            width: 100px;
+            height: 2px;
+            background-color: var(--primary-color);
+            border-radius: 1px;
+        }
+
+        /* Seção Sobre Mim */
+        #about .about-content {
+            max-width: 800px;
+            margin-left: 20px;
+            text-align: left;
+        }
+        #about p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: var(--subtle-text-color);
+        }
+
+        /* Seção de Experiência (Layout de duas colunas) */
+        #experience .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Duas colunas */
+            gap: 50px; /* Espaçamento entre as colunas */
+            max-width: 1000px; /* Limite a largura da grade */
+            margin: 0 auto; /* Centraliza a grade */
+        }
+
+        #experience .experience-column {
+            padding: 20px;
+        }
+
+        /* Estilos para cada item de experiência */
+        .experience-item {
+            background: transparent;
+            padding: 20px 0; /* Ajustado padding */
+            margin-bottom: 30px;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Linha divisória sutil */
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+            border-bottom: none; /* Remove a borda do último item */
+        }
+
+        .experience-item h3 {
+            color: var(--light-text-color);
+            margin-top: 0;
+            font-size: 1.6em; /* Tamanho da fonte do cargo */
+            margin-bottom: 5px;
+        }
+
+        .experience-item p.company-info {
+            color: var(--subtle-text-color);
+            font-size: 0.95em;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding-left: 0;
+            color: var(--subtle-text-color);
+        }
+
+        .experience-item ul li {
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 20px; /* Espaço para o ícone */
+        }
+
+        .experience-item ul li::before {
+            content: '▹'; /* Caractere de seta */
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* Seção de Habilidades (Layout de duas colunas) */
+        #skills .skills-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Duas colunas */
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        #skills .skills-column {
+            padding: 20px;
+        }
+
+        #skills .skills-column h3 {
+            color: var(--light-text-color);
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        #skills .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Colunas responsivas */
+            gap: 10px;
+            text-align: center;
+        }
+
+        #skills .skill-item {
+            background: transparent;
+            padding: 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: var(--subtle-text-color);
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+            border: 1px solid var(--border-color-subtle);
+        }
+
+        #skills .skill-item:hover {
+            background-color: var(--hover-bg-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Estilo para as "barras de progresso" de habilidades (simulação) */
+        .skill-bar-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-bar-item p {
+            margin: 0 0 5px 0;
+            color: var(--light-text-color);
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .skill-bar {
+            background-color: rgba(255, 255, 255, 0.1);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 4px;
+            width: 0%; /* Será preenchido via JS ou estaticamente */
+        }
+
+        /* Seção de Formação Acadêmica */
+        #education .education-item {
+            background: transparent;
+            padding: 20px 0;
+            margin-bottom: 30px;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        #education .education-item:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        #education .education-item h3 {
+            color: var(--light-text-color);
+            margin-top: 0;
+            font-size: 1.6em;
+            margin-bottom: 5px;
+        }
+
+        #education .education-item p {
+            color: var(--subtle-text-color);
+            font-size: 1.0em;
+        }
+
+        /* Seção de Projetos (Grid de cards) */
+        #projects .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid responsivo de 300px */
+            gap: 30px; /* Espaçamento entre os cards */
+        }
+
+        .project-card {
+            background-color: var(--card-bg-color); /* Fundo sutil para o card */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px; /* Altura fixa para as imagens dos projetos */
+            object-fit: cover; /* Garante que a imagem cubra a área */
+            display: block;
+        }
+
+        .project-card-content {
+            padding: 20px;
+            flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: var(--subtle-text-color);
+            font-size: 0.95em;
+            flex-grow: 1; /* Permite que o parágrafo ocupe o espaço */
+        }
+
+        .project-card-links {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .project-card-links a {
+            display: inline-block;
+            background: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-card-links a:hover {
+            background-color: var(--hover-bg-color);
+        }
+
+        /* Seção de Contato */
+        #contact .contact-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        #contact .contact-content h2 {
+            margin-bottom: 20px;
+        }
+
+        #contact .contact-content p {
+            font-size: 1.1em;
+            color: var(--subtle-text-color);
+            margin-bottom: 30px;
+        }
+
+        #contact .contact-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        #contact .contact-form input,
+        #contact .contact-form textarea {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px;
+            border-radius: 4px;
+            color: var(--light-text-color);
+            font-size: 1em;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        #contact .contact-form input:focus,
+        #contact .contact-form textarea:focus {
+            border-color: var(--primary-color);
+        }
+
+        #contact .contact-form button {
+            background-color: var(--primary-color);
+            color: var(--section-bg-color); /* Texto escuro no botão primário */
+            border: none;
+            padding: 15px 25px;
+            border-radius: 4px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #contact .contact-form button:hover {
+            background-color: #0056b3; /* Tom mais escuro do azul */
+            transform: translateY(-2px);
+        }
+
+        .social-links {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+            justify-content: center; /* Centraliza os ícones sociais */
+        }
+
+        .social-links a {
+            color: var(--subtle-text-color);
+            font-size: 1.8em;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Rodapé (Footer) */
+        footer {
+            background-color: var(--section-bg-color); /* Fundo sólido para o rodapé */
+            color: var(--subtle-text-color);
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: var(--subtle-text-color);
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--light-text-color);
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            #experience .experience-grid {
+                grid-template-columns: 1fr; /* Uma coluna em telas menores */
+            }
+            #skills .skills-layout {
+                grid-template-columns: 1fr; /* Uma coluna em telas menores */
+            }
+            header .hero-content h1 {
+                font-size: 3.5em;
+            }
+            header .hero-content p:nth-child(3) {
+                font-size: 1.5em;
+            }
+            section h2 {
+                text-align: center; /* Centraliza títulos de seção em telas menores */
+                margin-left: 0;
+            }
+            section h2::after {
+                left: 50%; /* Centraliza o sublinhado em telas menores */
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 80px 0 60px;
+            }
+            header .hero-content h1 {
+                font-size: 2.8em;
+            }
+            header .hero-content p:nth-child(3) {
+                font-size: 1.2em;
+            }
+            section h2 {
+                font-size: 2.2em;
+            }
+            .project-card {
+                height: auto; /* Altura automática para cards em mobile */
+            }
+            .navbar {
+                position: static; /* Remove posicionamento absoluto em mobile */
+                justify-content: center;
+                margin-bottom: 20px;
+                flex-wrap: wrap; /* Permite que os itens quebrem linha */
+            }
+            .experience-item, .education-item {
+                padding: 20px 0; /* Ajusta padding */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 60px 0 40px;
+            }
+            header .hero-content h1 {
+                font-size: 2.2em;
+            }
+            header .hero-content p:nth-child(3) {
+                font-size: 1em;
+            }
+            section h2 {
+                font-size: 1.8em;
+            }
+            .experience-item h3 {
+                font-size: 1.4em;
+            }
+            .experience-item p.company-info {
+                font-size: 0.9em;
+            }
+            .experience-item ul {
+                padding-left: 20px;
+            }
+            .experience-item ul li {
+                padding-left: 20px;
+            }
+            .experience-item ul li::before {
+                left: -5px;
+            }
+            #skills .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+            .main-button, .project-card-links a, #contact .contact-form button {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        
+        <div class="container hero-content">
+            <p>Olá, meu nome é</p>
+            <h1><span>Ju</span>liano <span>Ca</span>rdoso.</h1>
+            <p>Eu construo coisas para a web.</p>
+            <a href="https://github.com/j-cardoso" target="_blank" rel="noopener noreferrer" class="main-button">Ver meu Trabalho!</a>
+        </div>
+    </header>
+
+    <section id="about" class="container">
+        <h2>Sobre Mim</h2>
+        <div class="about-content">
+            <p>
+                Sou um desenvolvedor Front-end apaixonado por criar interfaces de usuário intuitivas e eficientes. Com experiência em desenvolvimento e evolução de produtos financeiros próprios, e atuação em múltiplos projetos para clientes, busco sempre aprimorar minhas habilidades e entregar soluções de alta qualidade. Minha paixão é transformar ideias complexas em experiências digitais fluidas e acessíveis.
+            </p>
+        </div>
+    </section>
+
+    <section id="experience" class="container">
+        <h2>Experiência Profissional</h2>
+        <div class="experience-grid">
+            <div class="experience-column">
+                <div class="experience-item">
+                    <h3>Desenvolvedor Front End</h3>
+                    <p class="company-info">Céos Lab | Tempo integral | out de 2022 - o momento | Porto Alegre, Rio Grande do Sul, Brasil</p>
+                    <ul>
+                        <li>Atuação no desenvolvimento e evolução de um produto financeiro próprio, com foco em performance, escalabilidade e qualidade visual.</li>
+                        <li>Colaboração ativa com equipes de design e backend para garantir a integração perfeita e a melhor experiência do usuário.</li>
+                        <li>Utilização de tecnologias como CSS, React.js e outras para construir interfaces robustas e modernas.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <h3>Desenvolvedor Front End</h3>
+                        <p class="company-info">Bravosul | mar de 2021 - out de 2022 | 1 ano 8 meses</p>
+                        <ul>
+                            <li>Atuação em múltiplos projetos de clientes, desde manutenção de sistemas legados até desenvolvimento de novas funcionalidades.</li>
+                            <li>Responsável por otimizar o desempenho e a usabilidade das aplicações web.</li>
+                            <li>Experiência com CSS, React.js e outras 6 competências, contribuindo para soluções inovadoras.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-column">
+                    <div class="experience-item">
+                        <h3>Desenvolvedor web front end</h3>
+                        <p class="company-info">Reweb - Acelere suas Vendas | mar de 2019 - nov de 2020 | 1 ano 9 meses | Porto Alegre e Região</p>
+                        <ul>
+                            <li>Desenvolvimento de interfaces web para soluções comerciais voltadas a pequenas e médias empresas.</li>
+                            <li>Implementação de telas responsivas com React, CSS3 e JavaScript, com foco em usabilidade e acessibilidade.</li>
+                            <li>Colaboração direta com clientes para entender suas necessidades e entregar produtos que superassem as expectativas.</li>
+                        </ul>
+                    </div>
+                    <div class="education-item">
+                        <h3>Formação Acadêmica</h3>
+                        <p>Curso técnico de T.I.</p>
+                        <p>Detalhes da Instituição e Período: [Adicione o nome da instituição e o período aqui, ex: Escola Técnica XYZ, 2017-2019]</p>
+                        <p>Foco em desenvolvimento de sistemas e infraestrutura de tecnologia da informação.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="container">
+            <h2>Habilidades</h2>
+            <div class="skills-layout">
+                <div class="skills-column">
+                    <h3>Minhas Habilidades Principais</h3>
+                    <div class="skill-bar-item">
+                        <p>HTML & CSS</p>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <p>JavaScript</p>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <p>React.js</p>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <p>Vue.js</p>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <p>TypeScript</p>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 70%;"></div></div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <p>GitHub</p>
+                        <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+                    </div>
+                </div>
+                <div class="skills-column">
+                    <h3>Outras Ferramentas & Conceitos</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">Git</div>
+                        <div class="skill-item">Responsive Design</div>
+                        <div class="skill-item">RESTful APIs</div>
+                        <div class="skill-item">Performance Optimization</div>
+                        <div class="skill-item">UI/UX Principles</div>
+                        <div class="skill-item">Webpack</div>
+                        <div class="skill-item">NPM/Yarn</div>
+                        <div class="skill-item">Figma (básico)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="container">
+            <h2>Projetos Selecionados</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/007bff/FFFFFF?text=Projeto+1" alt="Imagem do Projeto 1">
+                    <div class="project-card-content">
+                        <h3>Projeto de Exemplo 1</h3>
+                        <p>Uma breve descrição sobre este projeto. Destaque as tecnologias usadas e os desafios superados.</p>
+                        <div class="project-card-links">
+                            <a href="https://github.com/j-cardoso/projeto1" target="_blank" rel="noopener noreferrer">Código</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/007bff/FFFFFF?text=Projeto+2" alt="Imagem do Projeto 2">
+                    <div class="project-card-content">
+                        <h3>Projeto de Exemplo 2</h3>
+                        <p>Outra descrição de projeto. Fale sobre o impacto ou a funcionalidade principal.</p>
+                        <div class="project-card-links">
+                            <a href="https://github.com/j-cardoso/projeto2" target="_blank" rel="noopener noreferrer">Código</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/007bff/FFFFFF?text=Projeto+3" alt="Imagem do Projeto 3">
+                    <div class="project-card-content">
+                        <h3>Projeto de Exemplo 3</h3>
+                        <p>Descreva um terceiro projeto. Pode ser algo mais experimental ou um estudo de caso.</p>
+                        <div class="project-card-links">
+                            <a href="https://github.com/j-cardoso/projeto3" target="_blank" rel="noopener noreferrer">Código</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/007bff/FFFFFF?text=Projeto+4" alt="Imagem do Projeto 4">
+                    <div class="project-card-content">
+                        <h3>Projeto de Exemplo 4</h3>
+                        <p>Detalhes sobre este projeto. Mencione tecnologias e como ele resolveu um problema.</p>
+                        <div class="project-card-links">
+                            <a href="https://github.com/j-cardoso/projeto4" target="_blank" rel="noopener noreferrer">Código</a>
+                            <a href="#" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <p>Tenho interesse em novas oportunidades. Se você tiver alguma dúvida ou quiser apenas dizer olá, farei o possível para entrar em contato com você!</p>
+                <a href="mailto:ocardosojuliano@gmail.com" class="main-button" style="margin-top: 20px;">Diga Olá</a>
+                
+                <div class="social-links">
+                    <a href="https://github.com/j-cardoso" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/juliano-cardoso-32346818b/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <!-- Adicione mais links conforme necessário -->
+                </div>
+                <p>&copy; 2025 Juliano Cardoso. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+
+    </body>
+    </html>
