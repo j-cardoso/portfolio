@@ -145,7 +145,6 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 - 🌐 Portfolio: [j-cardoso.github.io/portfolio](https://j-cardoso.github.io/portfolio)
 - 💼 LinkedIn: [juliano-cardoso-32346818b](https://www.linkedin.com/in/juliano-cardoso-32346818b/)
-- 📧 Email: ocardosojuliano@gmail.com
 - 🐙 GitHub: [@j-cardoso](https://github.com/j-cardoso)
 
 ## 🙏 Agradecimentos
