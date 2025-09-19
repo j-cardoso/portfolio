@@ -1,4 +1,21 @@
 
+function updateFavicon(theme) {
+    // Remove todos os favicons existentes
+    const existingFavicons = document.querySelectorAll('link[rel="icon"]');
+    existingFavicons.forEach(favicon => {
+        if (!favicon.hasAttribute('media')) {
+            favicon.remove();
+        }
+    });
+    
+    // Adiciona o favicon apropriado para o tema atual
+    const faviconPath = theme === 'light' ? 'images/favicon-black.png' : 'images/favicon-white.png';
+    const favicon = document.createElement('link');
+    favicon.rel = 'icon';
+    favicon.href = faviconPath;
+    document.head.appendChild(favicon);
+}
+
 function toggleTheme() {
     const html = document.documentElement;
     const currentTheme = html.getAttribute('data-theme');
@@ -6,6 +23,7 @@ function toggleTheme() {
     
     html.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
+    updateFavicon(newTheme);
 }
 
 function toggleLanguage() {
@@ -31,6 +49,7 @@ function loadPreferences() {
     const savedTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
     document.getElementById('theme-toggle').checked = savedTheme === 'light';
+    updateFavicon(savedTheme);
     
     const savedLanguage = localStorage.getItem('language') || 'pt-BR';
     document.documentElement.setAttribute('lang', savedLanguage);
