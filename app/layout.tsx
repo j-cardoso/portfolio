@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Juliano Cardoso - Front-end Developer Portfolio",
   description:
     "Portfolio de desenvolvedor Front-end especializado em React, Next.js e TypeScript",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({
