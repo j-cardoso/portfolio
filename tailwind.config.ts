@@ -71,11 +71,31 @@ const config = {
           from: { opacity: "0", transform: "translateY(20px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        "gradient-x": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+        blob: {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(30px, -40px) scale(1.1)" },
+          "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+        },
+        "pulse-glow": {
+          "0%, 100%": { opacity: "0.6" },
+          "50%": { opacity: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         fadeIn: "fadeIn 0.5s ease-out",
+        "gradient-x": "gradient-x 4s ease infinite",
+        blob: "blob 10s infinite",
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
+      },
+      boxShadow: {
+        glow: "0 0 30px -5px hsl(var(--primary) / 0.5)",
+        "glow-lg": "0 0 60px -10px hsl(var(--primary) / 0.6)",
       },
     },
   },

@@ -1,15 +1,16 @@
 "use client";
 
-import { Moon, Sun, Globe, Menu, X } from "lucide-react";
-import { useTheme } from "./theme-provider";
-import { useLanguage } from "./language-provider";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { Code2, Globe, Menu, Moon, Sun, X } from "lucide-react";
 import { useState } from "react";
+import { useLanguage } from "./language-provider";
+import { useTheme } from "./theme-provider";
 
 const navItems = [
   { key: "about", href: "#about" },
   { key: "experience", href: "#experience" },
   { key: "skills", href: "#skills" },
+  { key: "projects", href: "#projects" },
   { key: "contact", href: "#contact" },
 ];
 
@@ -41,9 +42,21 @@ export function Header() {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
+      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border relative"
     >
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent bg-[length:200%_auto] animate-gradient-x" />
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center gap-4">
+        <a
+          href="#"
+          onClick={(e) => handleNavClick(e, "body")}
+          className="flex items-center gap-2 font-bold text-lg shrink-0"
+        >
+          <Code2 className="h-6 w-6 text-primary" />
+          <span>
+            Juca<span className="text-primary">.engineer</span>
+          </span>
+        </a>
+
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
@@ -73,7 +86,15 @@ export function Header() {
         </button>
 
         {/* Theme & Language Controls */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
+          <a
+            href="#contact"
+            onClick={(e) => handleNavClick(e, "#contact")}
+            className="hidden md:inline-flex items-center gap-1 bg-gradient-to-r from-primary to-secondary text-primary-foreground px-5 py-2 rounded-full text-sm font-semibold shadow-glow hover:scale-105 transition-transform"
+          >
+            {t("nav.contact")}
+          </a>
+
           <button
             onClick={toggleTheme}
             className="p-2 rounded-lg hover:bg-accent transition-colors"

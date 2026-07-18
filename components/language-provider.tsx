@@ -20,19 +20,25 @@ const translations = {
     "nav.about": "Sobre",
     "nav.experience": "Experiência",
     "nav.skills": "Habilidades",
+    "nav.projects": "Projetos",
     "nav.contact": "Contato",
 
     // Hero
+    "hero.badge": "Desenvolvedor Front-end",
     "hero.greeting": "Olá, meu nome é",
     "hero.tagline": "Eu construo coisas para a web.",
     "hero.cta": "Ver meu Trabalho!",
+    "hero.viewProjects": "Ver Projetos",
+    "hero.techStack": "Tecnologias que eu uso",
 
     // About
+    "about.badge": "Sobre Mim",
     "about.title": "Sobre Mim",
     "about.description":
       "Sou um desenvolvedor Front-end apaixonado por criar interfaces de usuário intuitivas e eficientes. Com experiência em desenvolvimento e evolução de produtos financeiros próprios, e atuação em múltiplos projetos para clientes, busco sempre aprimorar minhas habilidades e entregar soluções de alta qualidade. Minha paixão é transformar ideias complexas em experiências digitais fluidas e acessíveis.",
 
     // Experience
+    "experience.badge": "Trajetória",
     "experience.title": "Experiência Profissional",
     "experience.ceos.title": "Desenvolvedor Front End",
     "experience.ceos.company":
@@ -65,16 +71,32 @@ const translations = {
       "Colaboração direta com clientes para entender suas necessidades e entregar produtos que superassem as expectativas.",
 
     // Skills
-    "skills.title": "Habilidades",
+    "skills.badge": "Minhas Skills",
+    "skills.title": "Tecnologias que Domino",
     "skills.main": "Minhas Habilidades Principais",
     "skills.other": "Outras Ferramentas & Conceitos",
     "skills.responsive": "Design Responsivo",
     "skills.performance": "Otimização de Performance",
 
+    // Projects
+    "projects.badge": "Projetos em Destaque",
+    "projects.title": "Alguns dos Meus Trabalhos",
+    "projects.viewProject": "Ver Projeto",
+    "projects.dojo.description":
+      "Plataforma de gestão para academia de artes marciais, com área do aluno, acompanhamento de graduação por faixa, inscrição em eventos e cobrança de mensalidades via Mercado Pago.",
+    "projects.driveDetailer.description":
+      "Site white label para concessionária de veículos seminovos, com vitrine de estoque, destaque de qualidade/procedência dos carros e canais de contato.",
+    "projects.autoServiceHub.description":
+      "Sistema de gestão para estéticas automotivas, com controle de atendimentos por veículo, clientes e financeiro.",
+    "projects.pdfDiffGui.description":
+      "Aplicativo desktop para comparar o conteúdo de dois PDFs lado a lado, com destaque das diferenças e exportação para HTML/Excel.",
+
     // Contact
+    "contact.badge": "Vamos Trabalhar Juntos",
     "contact.title": "Entre em Contato",
     "contact.description":
       "Tenho interesse em novas oportunidades. Se você tiver alguma dúvida ou quiser apenas dizer olá, farei o possível para entrar em contato com você!",
+    "contact.cta": "Entrar em Contato",
     "contact.rights": "Todos os direitos reservados.",
   },
   en: {
@@ -82,19 +104,25 @@ const translations = {
     "nav.about": "About",
     "nav.experience": "Experience",
     "nav.skills": "Skills",
+    "nav.projects": "Projects",
     "nav.contact": "Contact",
 
     // Hero
+    "hero.badge": "Front-end Developer",
     "hero.greeting": "Hello, my name is",
     "hero.tagline": "I build things for the web.",
     "hero.cta": "View My Work!",
+    "hero.viewProjects": "View Projects",
+    "hero.techStack": "Technologies I work with",
 
     // About
+    "about.badge": "About Me",
     "about.title": "About Me",
     "about.description":
       "I am a Front-end developer passionate about creating intuitive and efficient user interfaces. With experience in developing and evolving proprietary financial products, and working on multiple client projects, I always seek to improve my skills and deliver high-quality solutions. My passion is transforming complex ideas into fluid and accessible digital experiences.",
 
     // Experience
+    "experience.badge": "Journey",
     "experience.title": "Professional Experience",
     "experience.ceos.title": "Front End Developer",
     "experience.ceos.company":
@@ -127,16 +155,32 @@ const translations = {
       "Direct collaboration with clients to understand their needs and deliver products that exceed expectations.",
 
     // Skills
-    "skills.title": "Skills",
+    "skills.badge": "My Skills",
+    "skills.title": "Technologies I Master",
     "skills.main": "My Main Skills",
     "skills.other": "Other Tools & Concepts",
     "skills.responsive": "Responsive Design",
     "skills.performance": "Performance Optimization",
 
+    // Projects
+    "projects.badge": "Featured Projects",
+    "projects.title": "Some of My Recent Work",
+    "projects.viewProject": "View Project",
+    "projects.dojo.description":
+      "Management platform for a martial arts dojo, with a student area, belt-rank progression tracking, event registration and monthly billing via Mercado Pago.",
+    "projects.driveDetailer.description":
+      "White label site for a used-car dealership, featuring an inventory showcase, quality/provenance highlights and contact channels.",
+    "projects.autoServiceHub.description":
+      "Management system for auto detailing shops, with per-vehicle service tracking, customers and finances.",
+    "projects.pdfDiffGui.description":
+      "Desktop app to compare the content of two PDFs side by side, with diff highlighting and HTML/Excel export.",
+
     // Contact
+    "contact.badge": "Let's Work Together",
     "contact.title": "Get in Touch",
     "contact.description":
       "I'm interested in new opportunities. If you have any questions or just want to say hello, I'll do my best to get back to you!",
+    "contact.cta": "Get In Touch",
     "contact.rights": "All rights reserved.",
   },
 };

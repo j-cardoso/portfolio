@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "../language-provider";
+import { SectionBadge } from "../section-badge";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -18,11 +19,13 @@ export function About() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.5 }}
+          className="text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">
+          <SectionBadge>{t("about.badge")}</SectionBadge>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">
             {t("about.title")}
           </h2>
-          <div className="bg-card border border-border rounded-xl p-8 shadow-lg">
+          <div className="tech-card bg-card border border-border rounded-xl p-8 shadow-lg text-left">
             <p className="text-lg text-muted-foreground leading-relaxed">
               {t("about.description")}
             </p>

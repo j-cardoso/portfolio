@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useLanguage } from "../language-provider";
+import { SectionBadge } from "../section-badge";
 import { useRef } from "react";
 import { Briefcase } from "lucide-react";
 
@@ -49,9 +50,12 @@ export function Experience() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-            {t("experience.title")}
-          </h2>
+          <div className="text-center mb-12">
+            <SectionBadge>{t("experience.badge")}</SectionBadge>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              {t("experience.title")}
+            </h2>
+          </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {experiences.map((exp, index) => (
@@ -62,10 +66,11 @@ export function Experience() {
                   isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
                 }
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card border border-border rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+                whileHover={{ y: -4 }}
+                className="tech-card bg-card border border-border rounded-xl p-6 shadow-lg"
               >
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="p-2 bg-primary/10 rounded-lg">
+                  <div className="p-2 bg-primary/10 rounded-lg animate-pulse-glow">
                     <Briefcase className="h-6 w-6 text-primary" />
                   </div>
                   <div className="flex-1">

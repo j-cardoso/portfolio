@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useLanguage } from "../language-provider";
+import { SectionBadge } from "../section-badge";
 import { useRef } from "react";
 
 const allSkills = [
@@ -37,9 +38,12 @@ export function Skills() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-            {t("skills.title")}
-          </h2>
+          <div className="text-center mb-12">
+            <SectionBadge>{t("skills.badge")}</SectionBadge>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              {t("skills.title")}
+            </h2>
+          </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {allSkills.map((skill, index) => (
@@ -51,7 +55,7 @@ export function Skills() {
                 }
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-card border border-border rounded-xl p-4 text-center hover:border-primary hover:shadow-lg transition-all cursor-default"
+                className="tech-card bg-card border border-border rounded-xl p-4 text-center cursor-default"
               >
                 <span className="text-sm md:text-base font-medium">
                   {skill.startsWith("skills.") ? t(skill) : skill}
