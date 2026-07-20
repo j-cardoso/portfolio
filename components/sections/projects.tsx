@@ -9,7 +9,7 @@ import Image from "next/image";
 
 const projects = [
   {
-    name: "Dojo Master Hub",
+    name: "Dojo Kyokai",
     descriptionKey: "projects.dojo.description",
     stack: ["React", "TypeScript", "Supabase", "Mercado Pago"],
     url: "https://dojokyokai.com.br/",
@@ -25,7 +25,7 @@ const projects = [
     image: "/projects/drive-detailer.jpg",
   },
   {
-    name: "Auto Service Hub",
+    name: "CarHub Pro",
     descriptionKey: "projects.autoServiceHub.description",
     stack: ["React", "TypeScript", "Supabase"],
     url: "https://carhubpro.com.br/",
@@ -33,7 +33,7 @@ const projects = [
     image: "/projects/auto-service-hub.png",
   },
   {
-    name: "PDF Diff GUI",
+    name: "jcDiff",
     descriptionKey: "projects.pdfDiffGui.description",
     stack: ["Python", "Tkinter", "pdfplumber"],
     url: "https://github.com/j-cardoso/pdf-diff-gui",
